@@ -34,6 +34,8 @@ jobs:
       - name: Kubernetes deployment Update
         if: success()
         run: |
+          kubectl apply -f deployment.yaml
+          kubectl apply -f service.yaml
           kubectl set image deployment/your-deployment-name \
             your-container-name=${{ secrets.REGISTRY_URL }}/your-image-name:latest \       # wisecow is deployment name in deployment.yaml
             --record
