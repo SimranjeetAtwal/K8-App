@@ -13,14 +13,14 @@ ENV PATH="/usr/games:${PATH}"
 WORKDIR /usr/local/bin/
 
 # Copy wisecow.sh script to the Docker image
-COPY wisecow.sh .
+COPY /wisecow/wisecow.sh .
 
 # Copy self-signed certificates into the container
 COPY server.crt .
 COPY server.key .
 
 # Make wisecow.sh executable (if needed)
-RUN chmod +x [[Owisecow.sh
+RUN chmod +x wisecow.sh
 
 # Expose port 4499 (assuming your application listens on this port)
 EXPOSE 4499
