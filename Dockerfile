@@ -15,7 +15,7 @@ WORKDIR /usr/local/bin/
 # Copy wisecow.sh script to the Docker image
 COPY /wisecow/wisecow.sh .
 
-# Copy self-signed certificates into the container
+# Copy self-signed certificates into the container for TLS.
 COPY server.crt .
 COPY server.key .
 
